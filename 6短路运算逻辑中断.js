@@ -7,6 +7,10 @@
                     如果第一个表达式为true  返回第二个表达式
                     如果第一个表达式为false  直接返回第一个表达式
             -----------------------------------------------
+            &&  为真的话 返回后面的值
+            ||  为真的话  返回第一个值，本身的值
+
+            
             ||  或
                 console.log(123 || 456)  //  123
                 console.log(0 || 123 || 345)  // 123 
@@ -15,11 +19,11 @@
 
      逻辑中断   '' undefined null NaN 0   代表false   
      
-     var num = 0
-     console.log(122 || num++)
-     console.log(num)   // 返回0   122判断为真 不会执行后面的num++
+                var num = 0
+                console.log(122 || num++) // 122
+                console.log(num)   // 返回0   122判断为真 不会执行后面的num++
 
-     var num = 0 
-		console.log(NaN || num++) // 0
-		console.log(num)   // 1
+                var num = 0 
+                    console.log(NaN || num++) // 0
+                    console.log(num)   // 1
   */

@@ -6,6 +6,163 @@
 	<title></title>
 </head>
 <script type="text/javascript">
+	var arr = [32, 43, 5, 66, 7, 3, 2, 3, 4, 6546, 5, 7, 8, 6, 23, 32]
+	// var newarr = []
+	// for (let i = 0; i < arr.length; i++) {
+	// 	if(arr[i] >= 30) {
+	// 		newarr[newarr.length] = arr[i]
+	// 	}
+	// }
+	// console.log(newarr)
+	for(let i=0; i<arr.length-1;i++) {
+		for(let j=0;j<arr.length - 1 - i;j++) {
+			if(arr[j] >= arr[j+1]) {
+				let temp = arr[j]
+				arr[j] = arr[j+1]
+				arr[j+1] = temp
+			}	
+		}
+	}
+	console.log(arr);
+	
+	// var arr = [1,2,3,4,5,6,7,8,98,12]
+	// var str = ''
+	// var sym = '※'
+	// for(let i=0;i<arr.length;i++) {
+	// 	str += arr[i] + sym
+	// }
+	// console.log(str)
+	// var max = arr[0]
+	// for(let i=0;i<arr.length;i++) {
+	// 	if(max > arr[i]) {
+	// 		max = arr[i]
+	// 	}
+	// }
+	// alert(max)
+	// var type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+	// var balance = 100
+	// if(type == 1){
+	// 	var deMoney = parseFloat(prompt('输入存钱数'))
+	// 	balance += deMoney
+	// 	alert('余额:' + balance)
+	// 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+	// }else if(type == 2){
+	// 	var drMoney = parseFloat(prompt('输入取钱数'))
+
+	// 	balance -= drMoney
+	// 	alert('余额:' + balance)
+	// 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+	// }else if(type == 3){
+	// 	alert('余额:' + balance)
+
+	// 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+	// } else if(type == 4) {
+	// 	alert('正在退出')
+	// } else {
+	// 	alert('无效指令')
+	// 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+	// }
+	// for(var i=1;i<5;i++) {
+	// 	if(i == 3) continue
+	// 	console.log('di'+ i + 'ge baozi')
+	// }
+	// var index = 0
+	// while (index < 5) {
+	// 	if(index == 2) {
+	// 	index++
+	// 	continue
+	// 	}
+	// 	console.log('di'+ index + 'ge baozi')
+	// 	index++
+	// }
+	// var index = 1
+	// do {
+	// 	if(index == 2) {
+	// 		index++
+	// 		continue
+	// 	}
+	// 	console.log('di'+ index + 'ge baozi')
+	// 	index++
+	// } while (index < 5)
+	// console.log('我正在吃第'+ index + '个包子');
+	// var i = 1
+	// var sum = 0
+	// do {
+	// 	if( i % 6 == 0) {
+	// 		i++
+	// 		continue
+	// 	}
+	// 	sum += i
+	// 	i++
+	// } while (i <= 100)
+	// console.log(sum)
+	// var num = 0
+	// console.log(122 || num++)
+	// console.log(num)   // 返回0   122判断为真 不会执行后面的num++
+	// var num = 0
+	// // var sum = Number
+	// var sum = 0
+	// console.log(sum)
+	// console.log(typeof(sum));
+	// do {
+	// 	// sum = parseInt(sum)
+	// 	// console.log(sum);
+	// 	sum += num
+	// 	num ++
+	// } while (num <= 100)
+	// console.log(sum)
+	// var message = prompt('你爱我吗')
+	// while(message !== '我爱你') {
+	// 	message = prompt('你爱我吗')
+	// }
+	// alert('上当了！')
+	// var index = 0
+	// do {
+	// 	console.log('index')
+	// 	index++
+	// } while(index < 10)
+	// var sum = 0
+	// for (let index = 0; index < 101; index++) {
+	// 	sum += index
+	// 	console.log(index);
+	// }
+	// console.log(sum);
+	// var even = 0
+	// var add = 0
+	// for (let index = 0; index < 101; index++) {
+	// 	if(index % 2 == 0) {
+	// 		even += index
+	// 	} else {
+	// 		add +=index
+	// 	}
+
+	// }
+	// console.log(even,add)
+	// var socre = 0
+	// var num = prompt('输出总人数')
+	// for (let index = 1; index <= num; index++) {
+	// 	socre += parseFloat(prompt('输入第'+ index + '个的成绩'))
+	// }
+	// console.log('总分数是：'+ socre,'平均分：' + socre/num)
+	// var rows = prompt('输入行数')
+	// var cols = prompt('输入列数')
+	// let str = ''
+	// for(let i = 1; i <= rows; i++) {
+	// 	for(let j = 1; j <= cols; j++) {
+	// 		str += '※'
+	// 	}
+	// 	str += '\n'
+	// }
+	// let str = ''
+	// for(var i=1; i <= 9; i++) {
+	// 	for(var j=1; j <= i; j++) {
+	// 		str += j + '*' + i + "=" + i*j + '\t'
+	// 		//str += '※'
+	// 	}
+	// 	str += '\n'
+	// }
+	// console.log(str)
+	// console.log(str)
 	// var week = prompt('输入0-6')
 	// switch (week) {
 	// 	case '0':
@@ -33,9 +190,16 @@
 	// 		alert('请输入0-6')
 	// 		break;
 	// }
-	for (let index = 0; index < 100; index++) {
-		console.log('断电调试')
-	}
+	// for (var index = 1; index <= 100; index++) {
+	// 	if(index == 1) {
+	// 		console.log('1岁 出生了')
+	// 	}else if(index == 100) {
+	// 		console.log('100岁 死了')
+	// 	}else {
+	// 		console.log(index +'岁')
+	// 	}
+
+	// }
 		// confirm('2222')
 		// prompt("sdaskhdkjsah ")
 		// alert('21111')
