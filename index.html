@@ -6,7 +6,80 @@
 	<title></title>
 </head>
 <script type="text/javascript">
-	var arr = [32, 43, 5, 66, 7, 3, 2, 3, 4, 6546, 5, 7, 8, 6, 23, 32]
+	function Star(name,age) {
+		this.uname = name
+		this.age = age
+		this.say = function(asd) {
+			alert(asd)
+		}
+	}
+	var result = new Star('zhang san',200)
+	result.say('11111111111')
+	// var aa = Number()
+	// console.log(aa);  // 输出0
+	
+	// function params() {
+	// 	var a = b = c = 9
+		
+	// }
+	// params()
+	// var a;
+	// b = 9
+	// console.log(b)
+	// console.log(a);
+	
+	// function isYear(params) {
+	// 	let flag = false
+	// 	if(params % 4 == 0 && params % 100 != 0 || params % 400 == 0) flag = true
+	// 	return flag
+	// }
+	// console.log(isYear(1887))
+	// function getDay(params) {
+	// 	var year = prompt('输入年份')
+	// 	var isyear = isYear(year)
+	// 	if(isyear){
+	// 		alert('是闰年28天')
+	// 	} else {
+	// 		alert('不是闰年29天')
+	// 	}
+	// }
+	// getDay()
+	// function sort(arr) {
+	// 	for (let i = 0; i < arr.length - 1; i++) {
+	// 		for (let j = 0; j < arr.length - i - 1; j++) {
+	// 			if (arr[j] >= arr[j + 1]) {
+	// 				var temp = arr[j]
+	// 				arr[j] = arr[j + 1]
+	// 				arr[j + 1] = temp
+	// 			}
+	// 		}
+	// 	}
+	// 	return arr
+	// }
+	// // let arr1 = sorts()
+	// console.log(sort([21,312,4,234,23,123,12,4,3,5]))
+	// function getzhis (num) {
+	// 	let index = 0
+	// 	for(let i=1;i<=num;i++) {
+	// 		if(num % i == 0) index++
+	// 	}
+	// 	return index == 2 ? num + '是一个质数' : num + '不是质数'
+	// }
+	// console.log(getzhis(4));
+	// function reverses(arr) {
+	// 	var newArr = []
+	// 	for (var i = arr.length - 1; i >= 0; i--) {
+	// 		newArr[newArr.length] = arr[i]
+	// 	}
+	// 	return newArr
+	// }
+	// var arr1 = reverses([1, 2, 3, 4, 5])
+	// console.log(arr1)
+	// function fn() {
+	// 	console.log(arguments)
+	// }
+	// fn(1, 2, 3, 4)
+	// var arr = [32, 43, 5, 66, 7, 3, 2, 3, 4, 6546, 5, 7, 8, 6, 23, 32]
 	// var newarr = []
 	// for (let i = 0; i < arr.length; i++) {
 	// 	if(arr[i] >= 30) {
@@ -14,17 +87,17 @@
 	// 	}
 	// }
 	// console.log(newarr)
-	for(let i=0; i<arr.length-1;i++) {
-		for(let j=0;j<arr.length - 1 - i;j++) {
-			if(arr[j] >= arr[j+1]) {
-				let temp = arr[j]
-				arr[j] = arr[j+1]
-				arr[j+1] = temp
-			}	
-		}
-	}
-	console.log(arr);
-	
+	// for(let i=0; i<arr.length-1;i++) {
+	// 	for(let j=0;j<arr.length - 1 - i;j++) {
+	// 		if(arr[j] >= arr[j+1]) {
+	// 			let temp = arr[j]
+	// 			arr[j] = arr[j+1]
+	// 			arr[j+1] = temp
+	// 		}	
+	// 	}
+	// }
+	// console.log(arr);
+
 	// var arr = [1,2,3,4,5,6,7,8,98,12]
 	// var str = ''
 	// var sym = '※'
