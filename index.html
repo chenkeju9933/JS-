@@ -4,30 +4,53 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
+	<input type="text">
 </head>
 <script type="text/javascript">
-	function Star(name,age) {
-		this.uname = name
-		this.age = age
-		this.say = function(asd) {
-			alert(asd)
+	function getRandomIntInclusive(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+	}
+	var random = getRandomIntInclusive(1,50)
+	for(let i=0;i < 5;i++) {
+		var mceil = prompt('输入1-50之间的整数，5次机会 猜对奖金100元')
+		if(mceil > random) {
+			alert('你猜大了！')
+		} else if(mceil < random) {
+			alert('你猜小了！')
+		} else {
+			alert('恭喜你，猜对了！')
+			break;
 		}
 	}
-	var result = new Star('zhang san',200)
-	result.say('11111111111')
+	alert('你的所有次数用尽！')
+	// function Star(name,age) {
+	// 	this.uname = name
+	// 	this.age = age
+	// 	this.say = function(asd) {
+	// 		alert(asd)
+	// 	}
+	// }
+	// var result = new Star('zhang san',200)
+	// result.say('11111111111')
+	// for(key in result) {
+	// 	console.log(key+':'+result[key])
+	// 	// console.log(result[key])
+	// }
 	// var aa = Number()
 	// console.log(aa);  // 输出0
-	
+
 	// function params() {
 	// 	var a = b = c = 9
-		
+
 	// }
 	// params()
 	// var a;
 	// b = 9
 	// console.log(b)
 	// console.log(a);
-	
+
 	// function isYear(params) {
 	// 	let flag = false
 	// 	if(params % 4 == 0 && params % 100 != 0 || params % 400 == 0) flag = true

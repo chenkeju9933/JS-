@@ -27,14 +27,20 @@
                             console.log('1111')
                         }
 
-                    3 构造函数
+                    3 构造函数创建
                         以上2种方法创建对象局限在 一次只能创建一个对象
 
-                        构造函数
+                        构造函数     利用构造函数创建对象的过程 也称为对象的实例化
                                     1 首字母必须大写
                                     2 不需要return  就可以返回值
                                     3 调用构造函数 必须用new
-                                    
+
+                                    new关键字执行过程
+                                    1 new 构造函数 在内存中创建了一个空的对象
+                                    2 this 指向刚才创建的空对象
+                                    3 执行构造函数里面的代码 给空对象添加属性和方法
+                                    4 返回这个对象 所以构造函数不用return
+
                         function Star(uname,age) {
                             this.uname = uname
                             this.age = age
@@ -56,4 +62,15 @@
 	                    }
                         var result = new Star('zhang san',200)
                         result.say('11111111111')
+        
+        遍历对象
+                for in   遍历对象
+                for(变量 in 对象) {
+                    console.log(变量)
+                }
+                for(key in obj) {
+                    console.log(key)        // 得到的是对象的属性
+                    console.log(obj[key])   // 得到的是对象的属性值
+                }
+
 */
