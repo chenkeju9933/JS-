@@ -7,24 +7,194 @@
 	<input type="text">
 </head>
 <script type="text/javascript">
-	function getRandomIntInclusive(min, max) {
-		min = Math.ceil(min);
-		max = Math.floor(max);
-		return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
-	}
-	var random = getRandomIntInclusive(1,50)
-	for(let i=0;i < 5;i++) {
-		var mceil = prompt('输入1-50之间的整数，5次机会 猜对奖金100元')
-		if(mceil > random) {
-			alert('你猜大了！')
-		} else if(mceil < random) {
-			alert('你猜小了！')
+	var str = 'asdsaukjasjhgjkhgjhdgshgfdshg'
+	// while(str.indexOf('s') !== -1) {
+	// 	str = str.replace('s','^')
+	// }
+	// console.log(str);
+	console.log(str.length);
+	console.log(str.charAt(3),str.charAt(5),str.charAt(9));
+	function findStr(params) {
+		if(str.indexOf(params) == -1) {
+			console.log('没出现');	
 		} else {
-			alert('恭喜你，猜对了！')
-			break;
+			console.log('出现');
 		}
 	}
-	alert('你的所有次数用尽！')
+	findStr('kh');
+	findStr('sdsd')
+	while (str.indexOf('j') !== -1) {
+		str = str.replace('j','---')
+	}
+	console.log(str);
+	str = str.substr(1,5)
+	console.log(str);
+	let obj = {}
+	for(let i=0;i<str.length;i++) {
+		var chars = str.charAt(i)
+		obj[chars] ? obj[chars]++ : obj[chars] = 1
+	}
+	console.log(obj);
+	var num = 0
+	var unistr = ''
+	for(var k in obj) {
+		if(obj[k] > num) {
+			num = obj[k]
+			unistr = k
+		}
+	}
+	console.log(num,unistr);
+	
+	
+	
+	
+	
+	
+	// function countDown() {
+	// 	var endTime = new Date('2020-5-9 18:00').valueOf()
+	// 	var nowTime = +new Date()
+	// 	var times = (endTime - nowTime) / 1000
+	// 	var d = parseInt(times / 3600 / 24)
+	// 	d = d < 10 ? '0' + d : d
+	// 	var h = parseInt(times / 3600 % 24)
+	// 	h = h < 10 ? '0' + h : h
+	// 	var m = parseInt(times / 60 % 60)
+	// 	m = m < 10 ? '0' + m : m
+	// 	var s = parseInt(times % 60)
+	// 	s = s < 10 ? '0' + s : s
+	// 	return d + '天' + h + '时' + m + '分' + s + '秒'
+	// }
+	// console.log(countDown());
+	// var arr = ['1','2','3','23','5','56','5','32','1','5','23']
+	// var arr1 = arr.filter(function(element,index,arr) {
+	// 	return arr.indexOf(element) === index
+	// })
+	// console.log(arr1);
+	// function uniarr (arr) {
+	// 	if(!arr.length) return
+	// 	if(arr.length == 1) return 1
+	// 	let obj = {}
+	// 	let max = 0
+	// 	let keys = ''
+	// 	arr.forEach(element => {
+	// 		obj[element] ? obj[element]++ : obj[element] = 1
+	// 	});
+	// 	console.log(obj);
+	// 	for(key in obj) {
+	// 		if(obj[key] > max) {
+	// 			max = obj[key]
+	// 			keys = key
+	// 		}
+			
+	// 	}
+	// 	return keys + '---' + max
+	// }
+	// console.log(uniarr(arr))
+	// function unique (arr) {
+	// 	var newArr = []
+	// 	for(let i=0;i<arr.length;i++) {
+	// 		if(newArr.indexOf(arr[i]) === -1) {
+	// 			newArr.push(arr[i])
+	// 		}
+	// 	}
+	// 	return newArr
+	// }
+	// arr1 = unique(arr)
+	// console.log(arr1);
+	// var arr = [1,2,3,4,5,6]
+	// arr.slice(2,4)
+	// console.log(arr);
+	// console.log(arr.slice(2,4));
+	// var arr = 'asdasdaskjhdkjhasjkhd'
+	// var num = 0
+	// var index = arr.indexOf('a')
+	// while(index !== -1) {
+	// 	console.log(index)
+	// 	index = arr.indexOf('a',index + 1)
+	// 	num++
+	// 	console.log(num);
+		
+	// }
+	// var obj = {}
+	// for(let i=0;i<arr.length;i++) {
+	// 	var chars = arr.charAt(i)
+	// 	if(obj[chars]) {
+	// 		obj[chars]++
+	// 	}else {
+	// 		obj[chars] = 1
+	// 	}
+	// }
+	// console.log(obj);
+	// var max = 0
+	// var ch = ''
+	// for(key in obj) {
+	// 	if(obj[key] > max){
+	// 		max = obj[key]
+	// 		ch = key
+	// 	}
+	// }
+	// console.log(ch);
+	
+	
+	
+	
+	// arr.pop()
+	// console.log(arr)
+	// console.log(arr.pop());
+	// arr.sort((a,b) => b - a)
+	// console.log(arr);
+	// arr.push('chen')
+	// console.log(arr);
+	// arr.unshift('a','b')
+	// console.log(arr);
+	// arr.pop()
+	// console.log(arr);
+	// arr.shift()
+	// console.log(arr);
+	// arr.indexOf('23')
+	// console.log(arr.indexOf(23));
+	// var date = new Date()
+	// var date3 = date.valueOf()
+	// var date4 = date.getTime()
+	// var date1 = +new Date()
+	// var date2 = Date.now()
+	// console.log(date1,date2,date3,date4);
+
+	// function getTimes() {
+	// 	var date = new Date()
+	// 	var h = date.getHours()
+	// 	var m = date.getMinutes()
+	// 	var s = date.getSeconds()
+	// 	s = s<10 ? '0' + s : s
+	// 	console.log(h+':'+m+':'+s);	
+	// }
+	// getTimes()
+	// var date = new Date('2020-5-7 22:50:8')
+	// console.log(date);
+	// var date1 = date.getTime()
+	// var date2 = new Date().getTime()
+	// console.log(date1,date2)
+	// let weektime = "0123456".charAt(new Date().getDay()); // 判断今天是星期几
+	// console.log(weektime);
+
+	// function getRandomIntInclusive(min, max) {
+	// 	min = Math.ceil(min);
+	// 	max = Math.floor(max);
+	// 	return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+	// }
+	// var random = getRandomIntInclusive(1,50)
+	// for(let i=0;i < 5;i++) {
+	// 	var mceil = prompt('输入1-50之间的整数，5次机会 猜对奖金100元')
+	// 	if(mceil > random) {
+	// 		alert('你猜大了！')
+	// 	} else if(mceil < random) {
+	// 		alert('你猜小了！')
+	// 	} else {
+	// 		alert('恭喜你，猜对了！')
+	// 		break;
+	// 	}
+	// }
+	// alert('你的所有次数用尽！')
 	// function Star(name,age) {
 	// 	this.uname = name
 	// 	this.age = age
