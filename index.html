@@ -4,52 +4,89 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	<input type="text">
+	<!-- <ul id="nav">
+		<li>1221</li>
+		<li>111</li>
+		<li>111</li>
+		<li>111</li>
+		<li>1111</li>
+	</ul>
+	<ul id="sec">
+		<li>22</li>
+		<li class="lisec">22</li>
+		<li>22</li>
+		<li>22</li>
+	</ul>
+	<div class="box">盒子1</div>
+	<div class="box">盒子2</div> -->
 </head>
+<body>
+	<button>张学友</button>
+	<img src="" alt="">
+</body>
 <script type="text/javascript">
-	var str = 'asdsaukjasjhgjkhgjhdgshgfdshg'
+	// var sec = document.getElementById('sec').getElementsByTagName('li')
+	// console.log(sec);
+	// var lisec = document.getElementsByClassName('lisec')
+	// console.log(lisec);
+	// var box = document.querySelector('.box')
+	// console.log(box);
+	// var nav = document.querySelectorAll('.box')
+	// console.log(nav);
+	var btn = document.querySelector('button')
+	var img = document.querySelector('img')
+	var flag = 1
+	btn.onclick = function () {
+		if(flag == 1) {
+			btn.innerHTML = '刘德华'
+			flag = 2
+			img.src = ''
+		} else if(flag == 2) {
+			btn.innerHTML = '张学友'
+			flag = 1
+			img.src = ''
+		}
+	}
+	
+	
+	
+	// var str = 'asdsaukjasjhgjkhgjhdgshgfdshg'
 	// while(str.indexOf('s') !== -1) {
 	// 	str = str.replace('s','^')
 	// }
 	// console.log(str);
-	console.log(str.length);
-	console.log(str.charAt(3),str.charAt(5),str.charAt(9));
-	function findStr(params) {
-		if(str.indexOf(params) == -1) {
-			console.log('没出现');	
-		} else {
-			console.log('出现');
-		}
-	}
-	findStr('kh');
-	findStr('sdsd')
-	while (str.indexOf('j') !== -1) {
-		str = str.replace('j','---')
-	}
-	console.log(str);
-	str = str.substr(1,5)
-	console.log(str);
-	let obj = {}
-	for(let i=0;i<str.length;i++) {
-		var chars = str.charAt(i)
-		obj[chars] ? obj[chars]++ : obj[chars] = 1
-	}
-	console.log(obj);
-	var num = 0
-	var unistr = ''
-	for(var k in obj) {
-		if(obj[k] > num) {
-			num = obj[k]
-			unistr = k
-		}
-	}
-	console.log(num,unistr);
-	
-	
-	
-	
-	
-	
+	// console.log(str.length);
+	// console.log(str.charAt(3),str.charAt(5),str.charAt(9));
+	// function findStr(params) {
+	// 	if(str.indexOf(params) == -1) {
+	// 		console.log('没出现');	
+	// 	} else {
+	// 		console.log('出现');
+	// 	}
+	// }
+	// findStr('kh');
+	// findStr('sdsd')
+	// while (str.indexOf('j') !== -1) {
+	// 	str = str.replace('j','---')
+	// }
+	// console.log(str);
+	// str = str.substr(1,5)
+	// console.log(str);
+	// let obj = {}
+	// for(let i=0;i<str.length;i++) {
+	// 	var chars = str.charAt(i)
+	// 	obj[chars] ? obj[chars]++ : obj[chars] = 1
+	// }
+	// console.log(obj);
+	// var num = 0
+	// var unistr = ''
+	// for(var k in obj) {
+	// 	if(obj[k] > num) {
+	// 		num = obj[k]
+	// 		unistr = k
+	// 	}
+	// }
+	// console.log(num,unistr);
 	// function countDown() {
 	// 	var endTime = new Date('2020-5-9 18:00').valueOf()
 	// 	var nowTime = +new Date()
@@ -539,8 +576,5 @@
 
 		// }
 </script>
-
-<body>
-</body>
 
 </html>

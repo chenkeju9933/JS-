@@ -12,22 +12,22 @@
                                         H5新增方法 IE9+支持 优先于instanceof
 
             添加 删除 数组元素
-                push()      末尾添加一个或者多个 原数组发生变化 
-                            console.log(arr.push(3,4))  //返回新数组长度
-                unshift()   在数组开头添加一个或者多个
-                pop()       删除数组的最后一个元素 一次只能删除1个  
-                            没有参数  返回的是删除的元素   console.log(arr.pop()) 
-                            原数组  也会发生变化 
-                shift()     删除数组的第一个元素  只能删除一个  同pop()性质 没有参数
+            push()      末尾添加一个或者多个 原数组发生变化 
+                        console.log(arr.push(3,4))  //返回新数组长度
+            unshift()   在数组开头添加一个或者多个
+            pop()       删除数组的最后一个元素 一次只能删除1个  
+                        没有参数  返回的是删除的元素   console.log(arr.pop()) 
+                        原数组  也会发生变化 
+            shift()     删除数组的第一个元素  只能删除一个  同pop()性质 没有参数
 
             数组排序  
-                arr.sort()  可以对个位数 进行升序排序
-                            arr.sort(function(a,b) {
-                                return a - b  //或者是b-a
-                            })
-                            arr.sort((a,b) => b - a)   //重大到小排序
+            arr.sort()  可以对个位数 进行升序排序
+                        arr.sort(function(a,b) {
+                            return a - b  //或者是b-a
+                        })
+                        arr.sort((a,b) => b - a)   //重大到小排序
             翻转数组
-                arr.reverse()
+            arr.reverse()
 
             indexOf()       indexOf('查找值',index起始位置)
                             返回指定数组或字符串元素的下标 从前往后
@@ -56,13 +56,14 @@
             数组转字符串
                 1 toString()    arr.toString()
                 2 join()        arr.join('-')  分隔符转字符串  
-            
+        ------------------------------------------------------------------------    
             splice(index,howmany,item1,.....,itemX)     index	必需。规定从何处添加/删除元素。
                     方法用于添加或删除数组中的元素         该参数是开始插入和（或）删除的数组元素的下标，必须是数字。
                                                         howmany	可选。规定应该删除多少元素。必须是数字，但可以是 "0"。
                                                         如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素。
                                                         item1, ..., itemX	可选。要添加到数组的新元素
-            slice()
+            
+            slice(1,10)     slice() 方法不会改变原始数组  不包括第10位
                             slice(start, end) 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分
                             var arr1 = arr.slice(1,3)
                             var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
