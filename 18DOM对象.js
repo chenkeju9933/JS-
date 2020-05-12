@@ -19,8 +19,25 @@
     onfocus  获得焦点
     onblur   失去焦点
 
+    onkeyup     键盘按键被松开 
+    onkeydown   键盘按键被按下
+    onkeypress  键盘按键被按下 不识别功能键  ctrl shift 箭头等
+                3个事件的执行顺序  down press up
+
+    onkeypress  可以识别用户按下按键的大小写
+                e.keyCode的值  判断用户按了哪个键
+
     onmouseover     鼠标经过
-    onmouseout      鼠标离开    
+    onmouseout      鼠标离开
+    onmousemove     鼠标移动  
+    contextmenu 禁用右键菜单
+            document.addEventListener('contextmenu',function() {
+                e.preventDefault()
+            })
+    selectstart 禁止选中文字
+            document.addEventListener('selectstart ',function() {
+                e.preventDefault()
+            })
 
     element.dataset    H5新增获取 自定义属性的集合  只能获取data- 开头的  IE11才开始支持
                         如果自定义属性有多个 - - 连结的话  

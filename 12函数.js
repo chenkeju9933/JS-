@@ -28,7 +28,7 @@
         数组翻转    
                     function reverse(arr) {
                         var newarr = []
-                        for(let i=arr.length - 1;i >= 0; i++) {
+                        for(let i=arr.length - 1;i >= 0; i--) {
                             newarr[newarr.length] = arr[i]
                         }
                         return newarr

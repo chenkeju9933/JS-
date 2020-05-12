@@ -20,11 +20,30 @@
 	<div class="box">盒子1</div>
 	<div class="box">盒子2</div> -->
 </head>
+
 <body>
 	<button>张学友</button>
 	<img src="" alt="">
+	<ul>
+		<li>1223123</li>
+		<li>12312312</li>
+		<li>3123123</li>
+		<li>3213123</li>
+		<li>321312</li>
+		<li>312312312</li>
+	</ul>
 </body>
 <script type="text/javascript">
+	var uluni = document.querySelector('ul')
+	var lis = document.querySelectorAll('li')
+	uluni.addEventListener('click', function(e) {
+		// alert('zhifou')
+		console.log(e.target);
+		for(let i = 0;i<lis.length;i++) {
+			lis[i].style.backgroundColor = ''
+		}
+		e.target.style.backgroundColor = 'pink'
+	}) 
 	// var sec = document.getElementById('sec').getElementsByTagName('li')
 	// console.log(sec);
 	// var lisec = document.getElementsByClassName('lisec')
@@ -33,23 +52,30 @@
 	// console.log(box);
 	// var nav = document.querySelectorAll('.box')
 	// console.log(nav);
-	var btn = document.querySelector('button')
-	var img = document.querySelector('img')
-	var flag = 1
-	btn.onclick = function () {
-		if(flag == 1) {
-			btn.innerHTML = '刘德华'
-			flag = 2
-			img.src = ''
-		} else if(flag == 2) {
-			btn.innerHTML = '张学友'
-			flag = 1
-			img.src = ''
-		}
-	}
-	
-	
-	
+	// var btn = document.querySelector('button')
+	// var img = document.querySelector('img')
+	// var flag = 1
+	// btn.onclick = function () {
+	// 	if(flag == 1) {
+	// 		btn.innerHTML = '刘德华'
+	// 		flag = 2
+	// 		img.src = ''
+	// 	} else if(flag == 2) {
+	// 		btn.innerHTML = '张学友'
+	// 		flag = 1
+	// 		img.src = ''
+	// 	}
+	// }
+	// function reverse(arr) {
+	// 	var newarr = []
+	// 	for (let i = arr.length - 1; i >= 0; i--) {
+	// 		newarr[newarr.length] = arr[i]
+	// 	}
+	// 	return newarr
+	// }
+	// console.log(reverse([1, 2, 3, 4, 5]))
+
+
 	// var str = 'asdsaukjasjhgjkhgjhdgshgfdshg'
 	// while(str.indexOf('s') !== -1) {
 	// 	str = str.replace('s','^')
@@ -122,7 +148,7 @@
 	// 			max = obj[key]
 	// 			keys = key
 	// 		}
-			
+
 	// 	}
 	// 	return keys + '---' + max
 	// }
@@ -150,7 +176,7 @@
 	// 	index = arr.indexOf('a',index + 1)
 	// 	num++
 	// 	console.log(num);
-		
+
 	// }
 	// var obj = {}
 	// for(let i=0;i<arr.length;i++) {
@@ -171,10 +197,10 @@
 	// 	}
 	// }
 	// console.log(ch);
-	
-	
-	
-	
+
+
+
+
 	// arr.pop()
 	// console.log(arr)
 	// console.log(arr.pop());

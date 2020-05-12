@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            width: 100px;
+            height: 180px;
+            animation: loading 5s linear infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./3.jpg" alt="陈囿兮">
+</body>
+<script>
+    var flag = false
+    var index = 1
+    var pic = document.querySelector('img')
+    // var pic = document.body.lastElementChild.previousElementSibling
+    console.log(pic);
+    document.addEventListener('mousemove', fn)
+    function fn(e) {
+        // console.log(e);
+        
+        var x = e.pageX
+        var y = e.pageY
+        pic.style.left = x + 'px'
+        pic.style.top = y + 'px'
+        flag = false
+    }
+    document.addEventListener('click', function (e) {
+        // document.removeEventListener('mousemove', fn)
+        // document.addEventListener('mousemove', fn1)
+        if (flag == false) {
+            var pic1 = document.createElement('img')
+            // pic.addEventListener
+            pic1.src = './'+ index +'.jpg'
+            pic.parentNode.appendChild(pic1)
+            pic = document.body.lastElementChild
+            console.log(pic);
+            
+            flag = true
+            if(index >= 2) {
+                index--
+            } else {
+                index++
+            }
+            
+        }
+
+    })
+
+</script>
+
+</html>
