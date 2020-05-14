@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        ul {
+            position: absolute;
+            letter-spacing: -800px;
+        }
+
+        img {
+            width: 800px;
+            height: 400px;
+            display: inline-block;
+        }
+
+        div {
+            margin: 0 auto;
+            /* border: solid 1px #ccc; */
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        span {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgb(10, 109, 240);
+            opacity: 0.8;
+            line-height: 30px;
+            color: deepskyblue;
+            display: none;
+            z-index: 200;
+        }
+
+        .left {
+            left: 5px;
+        }
+
+        .right {
+            right: 5px;
+        }
+
+        ol {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        li {
+            border: solid 2px #fff;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-left: 8px;
+
+        }
+
+        li:nth-child(1) {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="left">←</span>
+        <span class="right">→</span>
+        <ul>
+            <img src="./1.jpg" alt="">
+            <img src="./2.jpg" alt="">
+            <img src="./3.jpg" alt="">
+            <img src="./4.jpg" alt="">
+        </ul>
+        <ol></ol>
+    </div>
+</body>
+<script>
+    // 动画函数
+    function animate(obj, target, callback) {
+        clearInterval(obj.timer)
+        obj.timer = setInterval(() => {
+            var step = (target - obj.offsetLeft) / 10
+            step = step > 0 ? Math.ceil(step) : Math.floor(step)
+            if (obj.offsetLeft == target) {
+                clearInterval(obj.timer)
+                if (callback) {
+                    callback()
+                }
+            }
+            obj.style.left = obj.offsetLeft + step + 'px'
+        }, 15);
+    }
+    // 获取节点
+    var box = document.querySelector('div')
+    var left = document.querySelector('.left')
+    var right = document.querySelector('.right')
+    var imgs = document.querySelectorAll('img')
+    var img = document.querySelector('img')
+    var ol = document.querySelector('ol')
+    var ul = document.querySelector('ul')
+    var imgWidth = img.offsetWidth
+    var num = 0
+    var circle = 0
+    var flag = true
+    // 鼠标进入离开
+    box.addEventListener('mouseenter', function () {
+        left.style.display = 'block'
+        right.style.display = 'block'
+        clearInterval(timer)
+        timer = null //释放内容 提高性能
+    })
+    box.addEventListener('mouseleave', function () {
+        left.style.display = 'none'
+        right.style.display = 'none'
+        timer = setInterval(() => {
+            right.click() //手动调用 切换功能
+        }, 2000)
+    })
+    // 点击切换图片
+    left.addEventListener('click', function (e) {
+        if (flag) {
+            flag = false
+            if (num == 0) {
+                ul.style.left = -(imgs.length * imgWidth) + 'px'
+                num = imgs.length
+            }
+            if (circle == 0) circle = imgs.length
+            num--
+            circle--
+            animate(ul, num * -imgWidth, () => {
+                flag = true
+            })
+            for (let i = 0; i < imgs.length; i++) {
+                ol.children[i].style.backgroundColor = ''
+            }
+            ol.children[circle].style.backgroundColor = '#2cb5a5'
+        }
+    })
+    right.addEventListener('click', function (e) {
+        if (flag) {
+            flag = false
+            if (num == imgs.length) {
+                ul.style.left = 0 + 'px'
+                num = 0
+            }
+            num++
+            circle++
+            animate(ul, num * -imgWidth, ()=>{
+                flag = true
+            })
+            if (circle == imgs.length) circle = 0
+            for (let i = 0; i < imgs.length; i++) {
+                ol.children[i].style.backgroundColor = ''
+            }
+            ol.children[circle].style.backgroundColor = '#2cb5a5'
+        }
+    })
+    // 动态生成下面小圆圈
+    for (let i = 0; i < imgs.length; i++) {
+        var lis = document.createElement('li')
+        lis.setAttribute('index', i)
+        ol.appendChild(lis)
+        ol.children[0].style.backgroundColor = '#2cb5a5'
+        lis.addEventListener('click', function () {
+            for (let j = 0; j < imgs.length; j++) {
+                ol.children[j].style.backgroundColor = ''
+            }
+            this.style.backgroundColor = '#2cb5a5'
+            // 移动图片
+            var index = this.getAttribute('index')
+            num = index // 更新num  不然存在BUG 逻辑不严谨
+            circle = index
+            var focusWidth = -imgWidth * index
+            console.log(focusWidth, index, num);
+            animate(ul, focusWidth)
+        })
+    }
+    // 克隆一个图片实现无缝切换
+    var first = ul.children[0].cloneNode(true)
+    console.log(first)
+    ul.appendChild(first)
+    // 自动播放
+    var timer = setInterval(() => {
+        right.click() //手动调用 切换功能
+    }, 2000);
+</script>
+
+</html>
