@@ -51,5 +51,8 @@
 
     removeAttribute()           移除 某个属性
 
+    .classList.add('类名')      添加类名
+    .classList.remove('类名')   移除类名    
+    .classList.toggle('类名')   切换类名  如果有这个类就删除  如果没有 就添加
 
 */

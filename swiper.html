@@ -101,9 +101,10 @@
             step = step > 0 ? Math.ceil(step) : Math.floor(step)
             if (obj.offsetLeft == target) {
                 clearInterval(obj.timer)
-                if (callback) {
-                    callback()
-                }
+                // if (callback) {
+                //     callback()
+                // }
+                callback && callback()
             }
             obj.style.left = obj.offsetLeft + step + 'px'
         }, 15);
@@ -119,7 +120,7 @@
     var imgWidth = img.offsetWidth
     var num = 0
     var circle = 0
-    var flag = true
+    var flag = true  //防止用户点击过快
     // 鼠标进入离开
     box.addEventListener('mouseenter', function () {
         left.style.display = 'block'

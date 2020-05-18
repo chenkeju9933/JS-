@@ -4,25 +4,44 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	<!-- <ul id="nav">
-		<li>1221</li>
-		<li>111</li>
-		<li>111</li>
-		<li>111</li>
-		<li>1111</li>
-	</ul>
-	<ul id="sec">
-		<li>22</li>
-		<li class="lisec">22</li>
-		<li>22</li>
-		<li>22</li>
-	</ul>
-	<div class="box">盒子1</div>
-	<div class="box">盒子2</div> -->
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<style>
+		div {
+			letter-spacing: -800px;
+		}
+		div span{
+			display: inline-block;
+			width: 200px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background-color: rgb(168, 158, 179);
+		}
+		.current1 {
+			background-color: cornflowerblue;
+		}
+		.flag {
+			width: 800px;
+			height: 200px;
+			background-color: coral;
+			border: solid 1px #f9f9f9;
+			position: absolute;
+			font-size: 80px;
+			font-weight: bold;
+			text-align: center;
+			/* display: none; */
+		}
+		.div2 > div{
+			background-color: salmon;
+			display: inline-block;
+			text-align: center;
+			line-height: 50px;
+		}
+	</style>
 </head>
 
 <body>
-	<button>张学友</button>
+	<!-- <button>张学友</button>
 	<img src="" alt="">
 	<ul>
 		<li>1223123</li>
@@ -31,19 +50,78 @@
 		<li>3213123</li>
 		<li>321312</li>
 		<li>312312312</li>
-	</ul>
+	</ul> -->
+	<div class="tabelist">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+	</div>
+	<div class="flags">
+		<div class="flag" style="z-index: 1;">1</div>
+		<div class="flag">2</div>
+		<div class="flag">3</div>
+		<div class="flag">4</div>
+	</div>
+	<div class="div2" style="width: 300px; height: 100px; margin-top: 600px;">
+		<div style="width: 100px; height: 50px;">1</div>
+		<div style="width: 100px; height: 50px;">2</div>
+		<div style="width: 100px; height: 50px;">3</div>
+		<div style="width: 100px; height: 50px;">4</div>
+		<div style="width: 100px; height: 50px;">5</div>
+		<div style="width: 100px; height: 50px;">6</div>
+	</div>
 </body>
 <script type="text/javascript">
-	var uluni = document.querySelector('ul')
-	var lis = document.querySelectorAll('li')
-	uluni.addEventListener('click', function(e) {
-		// alert('zhifou')
-		console.log(e.target);
-		for(let i = 0;i<lis.length;i++) {
-			lis[i].style.backgroundColor = ''
-		}
-		e.target.style.backgroundColor = 'pink'
-	}) 
+	$(function() {
+		$('.tabelist span').click(function () {
+			// console.log($('.tabelist span'))
+			// $('.tabelist').eq(1).css('backgroundColor','red')
+			// $('.tabelist span').eq(0).addClass('current1')
+			$(this).addClass('current1').siblings().removeClass("current1")
+			var index = $(this).index()
+			console.log(index)
+			$('.flags div').eq(index).show().siblings().hide()
+			
+		})
+		// let index = $('.current')
+		// console.log(index);
+		$('.div2 div').hover(function() {
+			$(this).siblings().stop().fadeTo(100,0.7)
+		},function() {
+			$(this).siblings().stop().fadeTo(100,1)
+		})
+		
+	})
+	// var x = 0
+	// var y = 0
+	// for(let p=0;p<100;p++) {
+	// 	x = p - 1
+	// 	y = p - 7
+	// 	if(x + y < p && x >= 0 && y>=0) {
+	// 		console.log(x,y,p);
+	// 	}
+	// var	x = 0
+	// var y = 0
+	// x-y=10
+	// x+y=110
+		
+	// }
+	// var x = 0
+	// var	y = 0
+	// for(let p = 0;p<100;p++) {
+		    
+	// }
+	// var uluni = document.querySelector('ul')
+	// var lis = document.querySelectorAll('li')
+	// uluni.addEventListener('click', function(e) {
+	// 	// alert('zhifou')
+	// 	console.log(e.target);
+	// 	for(let i = 0;i<lis.length;i++) {
+	// 		lis[i].style.backgroundColor = ''
+	// 	}
+	// 	e.target.style.backgroundColor = 'pink'
+	// }) 
 	// var sec = document.getElementById('sec').getElementsByTagName('li')
 	// console.log(sec);
 	// var lisec = document.getElementsByClassName('lisec')

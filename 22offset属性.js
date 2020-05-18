@@ -17,6 +17,8 @@
     element.scrollWidth
     element.scrollHeight        返回自身实际高度 含padding 不含边框  数值不带单位  实际内容的高度
             onscroll 滚动事件 .addEventListener('scroll',function() {})
-            window.pageYOffset   // 页面文档被卷去的头部距离
+            window.pageYOffset   // 页面文档被卷去的头部距离  页面滚动了多少
+
+    window.scroll(x,y)    //可以指定页面返回到某个位置(高度) xy直接写数字 不带单位
 
 */
