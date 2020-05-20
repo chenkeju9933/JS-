@@ -96,7 +96,7 @@
     解除事件委托
         $('ul').off('click','li')
 
-    one()           相当于on()        只会触发一次
+    one('click',function() {})           相当于on()        只会触发一次
 
     自动触发事件
         1 $('div').click()

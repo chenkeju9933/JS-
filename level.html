@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS高级</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let {name,age,sex} = {name:'1221',age: 18,sex:'nan'}
+    console.log(name,age,sex);
+    
+    // class Star {
+    //     constructor(uname,age) {
+    //         this.uname = uname
+    //         this.age = age
+    //     }
+    //     sing(song) {
+    //         return song            
+    //     }
+    // }
+    // var ldh = new Star('刘德华',19)
+    // console.log(ldh,ldh.sing('冰雨'));
+    // class Father {
+    //     constructor(x,y) {
+    //         this.x = x
+    //         this.y = y
+    //     }
+    //     sum() {
+    //         return this.x + this.y
+    //     }
+    // }
+    // class Son extends Father {
+    //     constructor(x,y) {
+    //         super(x,y)
+    //         this.x = x
+    //         this.y = y
+
+    //     }
+    // }
+    // var son = new Son(2,5)
+    // console.log(son.sum())
+    // function Star(uname,age) {
+    //     this.uname = uname
+    //     this.age = age
+    //     this.sing = function () {
+    //         console.log('唱歌');           
+    //     }
+    // }
+    // var ldh = new Star('刘德华',18)
+    // console.log(ldh);
+    // function Father(uname,age) {
+    //     this.uname = uname
+    //     this.age = age
+    // }
+    // Father.prototype.money = function() {
+    //     console.log(10000000);
+
+    // }
+    // function Son(uname,age,score) {
+    //     Father.call(this,uname,age)
+    //     this.score = score
+    // }
+
+    // Son.prototype = new Father()
+    // Son.prototype.consturctor = Son
+    // Son.prototype.exam = function() {
+    //     console.log('我要考试');
+    // }
+    // var ldh = new Son('liudeh',18,100)
+    // console.log(ldh);
+    // console.log(Father.prototype);
+    // console.log(Son.prototype.consturctor);
+    // function statistics(arr) {
+    //     let obj = {}
+    //     arr.map((item) => {
+    //         if(obj[item]) {
+    //             obj[item] = obj[item] + 1
+    //         } else {
+    //             obj[item] = 1  
+    //         }
+    //     })
+    //     return obj
+    // }
+    // console.log(statistics(['111','aa','b','111','aa']));
+    // var car = (function() {
+    //     var start = 13
+    //     var total = 0
+    //     return {
+    //         price: function(a) {
+    //             if(a <= 3) {
+    //                 total = start
+    //             } else {
+    //                 total = start + (a - 3) * 5
+    //             }
+    //             return total
+    //         },
+    //         yd: function(b) {
+    //             return b ? total + 10 : total
+    //         }
+    //     }
+    // })() 
+    // console.log(car.price(20))
+    // console.log(car.yd(true))
+    // function fn(n) {
+    //     if(n == 1) return 1
+    //     return n * fn(n - 1)
+    // }
+    // console.log(fn(3));
+    // let a = 0;
+    // function tu(num) {
+    //     a++
+    //     if (num == 1 || num == 2) {
+    //         return 1
+    //     }
+    //     let nums = tu(num - 1) + tu(num - 2)
+    //     return nums
+    // }
+    // console.log(tu(9), a)
+
+
+</script>
+
+</html>
