@@ -1,51 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
-	<meta charset="utf-8">
-	<title></title>
-	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-	<style>
-		div {
-			letter-spacing: -800px;
-		}
-
-		div span {
-			display: inline-block;
-			width: 200px;
-			height: 50px;
-			line-height: 50px;
-			text-align: center;
-			background-color: rgb(168, 158, 179);
-		}
-
-		.current1 {
-			background-color: cornflowerblue;
-		}
-
-		.flag {
-			width: 800px;
-			height: 200px;
-			background-color: coral;
-			border: solid 1px #f9f9f9;
-			position: absolute;
-			font-size: 80px;
-			font-weight: bold;
-			text-align: center;
-			/* display: none; */
-		}
-
-		.div2>div {
-			background-color: salmon;
-			display: inline-block;
-			text-align: center;
-			line-height: 50px;
-		}
-	</style>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        div {
+            letter-spacing: -800px;
+        }
+        
+        div span {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: rgb(168, 158, 179);
+        }
+        
+        .current1 {
+            background-color: cornflowerblue;
+        }
+        
+        .flag {
+            width: 800px;
+            height: 200px;
+            background-color: coral;
+            border: solid 1px #f9f9f9;
+            position: absolute;
+            font-size: 80px;
+            font-weight: bold;
+            text-align: center;
+            /* display: none; */
+        }
+        
+        .div2>div {
+            background-color: salmon;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
 </head>
 
 <body>
-	<!-- <button>张学友</button>
+    <!-- <button>张学友</button>
 	<img src="" alt="">
 	<ul>
 		<li>1223123</li>
@@ -55,655 +55,655 @@
 		<li>321312</li>
 		<li>312312312</li>
 	</ul> -->
-	<div class="tabelist">
-		<span>1</span>
-		<span>2</span>
-		<span>3</span>
-		<span>4</span>
-	</div>
-	<div class="flags">
-		<div class="flag" style="z-index: 1;">1</div>
-		<div class="flag">2</div>
-		<div class="flag">3</div>
-		<div class="flag">4</div>
-	</div>
-	<div class="div2" style="width: 300px; height: 100px; margin-top: 600px; position: absolute;">
-		<div style="width: 100px; height: 50px;">1</div>
-		<div style="width: 100px; height: 50px;">2</div>
-		<div style="width: 100px; height: 50px;">3</div>
-		<div style="width: 100px; height: 50px;">4</div>
-		<div style="width: 100px; height: 50px;">5</div>
-		<div style="width: 100px; height: 50px;">6</div>
-	</div>
+    <div class="tabelist">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+    <div class="flags">
+        <div class="flag" style="z-index: 1;">1</div>
+        <div class="flag">2</div>
+        <div class="flag">3</div>
+        <div class="flag">4</div>
+    </div>
+    <div class="div2" style="width: 300px; height: 100px; margin-top: 600px; position: absolute;">
+        <div style="width: 100px; height: 50px;">1</div>
+        <div style="width: 100px; height: 50px;">2</div>
+        <div style="width: 100px; height: 50px;">3</div>
+        <div style="width: 100px; height: 50px;">4</div>
+        <div style="width: 100px; height: 50px;">5</div>
+        <div style="width: 100px; height: 50px;">6</div>
+    </div>
 </body>
 <script type="text/javascript">
-	var arr = [1, 2, 3, 4, 5, 6, 7]
-	console.log(arr.slice(1, 2));
-	var str = '1234567'
-	console.log(str.substring(1, 3));
-	console.log(str.slice(1, 3))
-	var div = document.querySelector('.div2')
-	console.log(div);
+    var arr = [1, 2, 3, 4, 5, 6, 7]
+    console.log(arr.slice(1, 2));
+    var str = '1234567'
+    console.log(str.substring(1, 3));
+    console.log(str.slice(1, 3))
+    var div = document.querySelector('.div2')
+    console.log(div);
 
-	function animates(obj, target, callback) {
-		clearInterval(obj.timer)
-		obj.timer = setInterval(() => {
-			var step = (target - obj.offsetLeft) / 10
-			step = step > 0 ? Math.ceil(step) : Math.floor(step)
-			if (obj.offsetLeft >= target) {
-				clearInterval(obj.timer)
-				callback && callback()
-			}
-			obj.style.left = obj.offsetLeft + step + 'px'
-		}, 15);
-	}
-	animates(div, 500)
-	$(function () {
-		$('.tabelist span').click(function () {
-			// console.log($('.tabelist span'))
-			// $('.tabelist').eq(1).css('backgroundColor','red')
-			// $('.tabelist span').eq(0).addClass('current1')
-			$(this).addClass('current1').siblings().removeClass("current1")
-			var index = $(this).index()
-			console.log(index)
-			$('.flags div').eq(index).show().siblings().hide()
+    function animates(obj, target, callback) {
+        clearInterval(obj.timer)
+        obj.timer = setInterval(() => {
+            var step = (target - obj.offsetLeft) / 10
+            step = step > 0 ? Math.ceil(step) : Math.floor(step)
+            if (obj.offsetLeft >= target) {
+                clearInterval(obj.timer)
+                callback && callback()
+            }
+            obj.style.left = obj.offsetLeft + step + 'px'
+        }, 15);
+    }
+    animates(div, 500)
+    $(function() {
+            $('.tabelist span').click(function() {
+                    // console.log($('.tabelist span'))
+                    // $('.tabelist').eq(1).css('backgroundColor','red')
+                    // $('.tabelist span').eq(0).addClass('current1')
+                    $(this).addClass('current1').siblings().removeClass("current1")
+                    var index = $(this).index()
+                    console.log(index)
+                    $('.flags div').eq(index).show().siblings().hide()
 
-		})
-		// let index = $('.current')
-		// console.log(index);
-		$('.div2 div').hover(function () {
-			$(this).siblings().stop().fadeTo(100, 0.7)
-		}, function () {
-			$(this).siblings().stop().fadeTo(100, 1)
-		})
+                })
+                // let index = $('.current')
+                // console.log(index);
+            $('.div2 div').hover(function() {
+                $(this).siblings().stop().fadeTo(100, 0.7)
+            }, function() {
+                $(this).siblings().stop().fadeTo(100, 1)
+            })
 
-	})
-	// var x = 0
-	// var y = 0
-	// for(let p=0;p<100;p++) {
-	// 	x = p - 1
-	// 	y = p - 7
-	// 	if(x + y < p && x >= 0 && y>=0) {
-	// 		console.log(x,y,p);
-	// 	}
-	// var	x = 0
-	// var y = 0
-	// x-y=10
-	// x+y=110
+        })
+        // var x = 0
+        // var y = 0
+        // for(let p=0;p<100;p++) {
+        // 	x = p - 1
+        // 	y = p - 7
+        // 	if(x + y < p && x >= 0 && y>=0) {
+        // 		console.log(x,y,p);
+        // 	}
+        // var	x = 0
+        // var y = 0
+        // x-y=10
+        // x+y=110
 
-	// }
-	// var x = 0
-	// var	y = 0
-	// for(let p = 0;p<100;p++) {
+    // }
+    // var x = 0
+    // var	y = 0
+    // for(let p = 0;p<100;p++) {
 
-	// }
-	// var uluni = document.querySelector('ul')
-	// var lis = document.querySelectorAll('li')
-	// uluni.addEventListener('click', function(e) {
-	// 	// alert('zhifou')
-	// 	console.log(e.target);
-	// 	for(let i = 0;i<lis.length;i++) {
-	// 		lis[i].style.backgroundColor = ''
-	// 	}
-	// 	e.target.style.backgroundColor = 'pink'
-	// }) 
-	// var sec = document.getElementById('sec').getElementsByTagName('li')
-	// console.log(sec);
-	// var lisec = document.getElementsByClassName('lisec')
-	// console.log(lisec);
-	// var box = document.querySelector('.box')
-	// console.log(box);
-	// var nav = document.querySelectorAll('.box')
-	// console.log(nav);
-	// var btn = document.querySelector('button')
-	// var img = document.querySelector('img')
-	// var flag = 1
-	// btn.onclick = function () {
-	// 	if(flag == 1) {
-	// 		btn.innerHTML = '刘德华'
-	// 		flag = 2
-	// 		img.src = ''
-	// 	} else if(flag == 2) {
-	// 		btn.innerHTML = '张学友'
-	// 		flag = 1
-	// 		img.src = ''
-	// 	}
-	// }
-	// function reverse(arr) {
-	// 	var newarr = []
-	// 	for (let i = arr.length - 1; i >= 0; i--) {
-	// 		newarr[newarr.length] = arr[i]
-	// 	}
-	// 	return newarr
-	// }
-	// console.log(reverse([1, 2, 3, 4, 5]))
-
-
-	// var str = 'asdsaukjasjhgjkhgjhdgshgfdshg'
-	// while(str.indexOf('s') !== -1) {
-	// 	str = str.replace('s','^')
-	// }
-	// console.log(str);
-	// console.log(str.length);
-	// console.log(str.charAt(3),str.charAt(5),str.charAt(9));
-	// function findStr(params) {
-	// 	if(str.indexOf(params) == -1) {
-	// 		console.log('没出现');	
-	// 	} else {
-	// 		console.log('出现');
-	// 	}
-	// }
-	// findStr('kh');
-	// findStr('sdsd')
-	// while (str.indexOf('j') !== -1) {
-	// 	str = str.replace('j','---')
-	// }
-	// console.log(str);
-	// str = str.substr(1,5)
-	// console.log(str);
-	// let obj = {}
-	// for(let i=0;i<str.length;i++) {
-	// 	var chars = str.charAt(i)
-	// 	obj[chars] ? obj[chars]++ : obj[chars] = 1
-	// }
-	// console.log(obj);
-	// var num = 0
-	// var unistr = ''
-	// for(var k in obj) {
-	// 	if(obj[k] > num) {
-	// 		num = obj[k]
-	// 		unistr = k
-	// 	}
-	// }
-	// console.log(num,unistr);
-	// function countDown() {
-	// 	var endTime = new Date('2020-5-9 18:00').valueOf()
-	// 	var nowTime = +new Date()
-	// 	var times = (endTime - nowTime) / 1000
-	// 	var d = parseInt(times / 3600 / 24)
-	// 	d = d < 10 ? '0' + d : d
-	// 	var h = parseInt(times / 3600 % 24)
-	// 	h = h < 10 ? '0' + h : h
-	// 	var m = parseInt(times / 60 % 60)
-	// 	m = m < 10 ? '0' + m : m
-	// 	var s = parseInt(times % 60)
-	// 	s = s < 10 ? '0' + s : s
-	// 	return d + '天' + h + '时' + m + '分' + s + '秒'
-	// }
-	// console.log(countDown());
-	// var arr = ['1','2','3','23','5','56','5','32','1','5','23']
-	// var arr1 = arr.filter(function(element,index,arr) {
-	// 	return arr.indexOf(element) === index
-	// })
-	// console.log(arr1);
-	// function uniarr (arr) {
-	// 	if(!arr.length) return
-	// 	if(arr.length == 1) return 1
-	// 	let obj = {}
-	// 	let max = 0
-	// 	let keys = ''
-	// 	arr.forEach(element => {
-	// 		obj[element] ? obj[element]++ : obj[element] = 1
-	// 	});
-	// 	console.log(obj);
-	// 	for(key in obj) {
-	// 		if(obj[key] > max) {
-	// 			max = obj[key]
-	// 			keys = key
-	// 		}
-
-	// 	}
-	// 	return keys + '---' + max
-	// }
-	// console.log(uniarr(arr))
-	// function unique (arr) {
-	// 	var newArr = []
-	// 	for(let i=0;i<arr.length;i++) {
-	// 		if(newArr.indexOf(arr[i]) === -1) {
-	// 			newArr.push(arr[i])
-	// 		}
-	// 	}
-	// 	return newArr
-	// }
-	// arr1 = unique(arr)
-	// console.log(arr1);
-	// var arr = [1,2,3,4,5,6]
-	// arr.slice(2,4)
-	// console.log(arr);
-	// console.log(arr.slice(2,4));
-	// var arr = 'asdasdaskjhdkjhasjkhd'
-	// var num = 0
-	// var index = arr.indexOf('a')
-	// while(index !== -1) {
-	// 	console.log(index)
-	// 	index = arr.indexOf('a',index + 1)
-	// 	num++
-	// 	console.log(num);
-
-	// }
-	// var obj = {}
-	// for(let i=0;i<arr.length;i++) {
-	// 	var chars = arr.charAt(i)
-	// 	if(obj[chars]) {
-	// 		obj[chars]++
-	// 	}else {
-	// 		obj[chars] = 1
-	// 	}
-	// }
-	// console.log(obj);
-	// var max = 0
-	// var ch = ''
-	// for(key in obj) {
-	// 	if(obj[key] > max){
-	// 		max = obj[key]
-	// 		ch = key
-	// 	}
-	// }
-	// console.log(ch);
+    // }
+    // var uluni = document.querySelector('ul')
+    // var lis = document.querySelectorAll('li')
+    // uluni.addEventListener('click', function(e) {
+    // 	// alert('zhifou')
+    // 	console.log(e.target);
+    // 	for(let i = 0;i<lis.length;i++) {
+    // 		lis[i].style.backgroundColor = ''
+    // 	}
+    // 	e.target.style.backgroundColor = 'pink'
+    // }) 
+    // var sec = document.getElementById('sec').getElementsByTagName('li')
+    // console.log(sec);
+    // var lisec = document.getElementsByClassName('lisec')
+    // console.log(lisec);
+    // var box = document.querySelector('.box')
+    // console.log(box);
+    // var nav = document.querySelectorAll('.box')
+    // console.log(nav);
+    // var btn = document.querySelector('button')
+    // var img = document.querySelector('img')
+    // var flag = 1
+    // btn.onclick = function () {
+    // 	if(flag == 1) {
+    // 		btn.innerHTML = '刘德华'
+    // 		flag = 2
+    // 		img.src = ''
+    // 	} else if(flag == 2) {
+    // 		btn.innerHTML = '张学友'
+    // 		flag = 1
+    // 		img.src = ''
+    // 	}
+    // }
+    // function reverse(arr) {
+    // 	var newarr = []
+    // 	for (let i = arr.length - 1; i >= 0; i--) {
+    // 		newarr[newarr.length] = arr[i]
+    // 	}
+    // 	return newarr
+    // }
+    // console.log(reverse([1, 2, 3, 4, 5]))
 
 
+    // var str = 'asdsaukjasjhgjkhgjhdgshgfdshg'
+    // while(str.indexOf('s') !== -1) {
+    // 	str = str.replace('s','^')
+    // }
+    // console.log(str);
+    // console.log(str.length);
+    // console.log(str.charAt(3),str.charAt(5),str.charAt(9));
+    // function findStr(params) {
+    // 	if(str.indexOf(params) == -1) {
+    // 		console.log('没出现');	
+    // 	} else {
+    // 		console.log('出现');
+    // 	}
+    // }
+    // findStr('kh');
+    // findStr('sdsd')
+    // while (str.indexOf('j') !== -1) {
+    // 	str = str.replace('j','---')
+    // }
+    // console.log(str);
+    // str = str.substr(1,5)
+    // console.log(str);
+    // let obj = {}
+    // for(let i=0;i<str.length;i++) {
+    // 	var chars = str.charAt(i)
+    // 	obj[chars] ? obj[chars]++ : obj[chars] = 1
+    // }
+    // console.log(obj);
+    // var num = 0
+    // var unistr = ''
+    // for(var k in obj) {
+    // 	if(obj[k] > num) {
+    // 		num = obj[k]
+    // 		unistr = k
+    // 	}
+    // }
+    // console.log(num,unistr);
+    // function countDown() {
+    // 	var endTime = new Date('2020-5-9 18:00').valueOf()
+    // 	var nowTime = +new Date()
+    // 	var times = (endTime - nowTime) / 1000
+    // 	var d = parseInt(times / 3600 / 24)
+    // 	d = d < 10 ? '0' + d : d
+    // 	var h = parseInt(times / 3600 % 24)
+    // 	h = h < 10 ? '0' + h : h
+    // 	var m = parseInt(times / 60 % 60)
+    // 	m = m < 10 ? '0' + m : m
+    // 	var s = parseInt(times % 60)
+    // 	s = s < 10 ? '0' + s : s
+    // 	return d + '天' + h + '时' + m + '分' + s + '秒'
+    // }
+    // console.log(countDown());
+    // var arr = ['1','2','3','23','5','56','5','32','1','5','23']
+    // var arr1 = arr.filter(function(element,index,arr) {
+    // 	return arr.indexOf(element) === index
+    // })
+    // console.log(arr1);
+    // function uniarr (arr) {
+    // 	if(!arr.length) return
+    // 	if(arr.length == 1) return 1
+    // 	let obj = {}
+    // 	let max = 0
+    // 	let keys = ''
+    // 	arr.forEach(element => {
+    // 		obj[element] ? obj[element]++ : obj[element] = 1
+    // 	});
+    // 	console.log(obj);
+    // 	for(key in obj) {
+    // 		if(obj[key] > max) {
+    // 			max = obj[key]
+    // 			keys = key
+    // 		}
+
+    // 	}
+    // 	return keys + '---' + max
+    // }
+    // console.log(uniarr(arr))
+    // function unique (arr) {
+    // 	var newArr = []
+    // 	for(let i=0;i<arr.length;i++) {
+    // 		if(newArr.indexOf(arr[i]) === -1) {
+    // 			newArr.push(arr[i])
+    // 		}
+    // 	}
+    // 	return newArr
+    // }
+    // arr1 = unique(arr)
+    // console.log(arr1);
+    // var arr = [1,2,3,4,5,6]
+    // arr.slice(2,4)
+    // console.log(arr);
+    // console.log(arr.slice(2,4));
+    // var arr = 'asdasdaskjhdkjhasjkhd'
+    // var num = 0
+    // var index = arr.indexOf('a')
+    // while(index !== -1) {
+    // 	console.log(index)
+    // 	index = arr.indexOf('a',index + 1)
+    // 	num++
+    // 	console.log(num);
+
+    // }
+    // var obj = {}
+    // for(let i=0;i<arr.length;i++) {
+    // 	var chars = arr.charAt(i)
+    // 	if(obj[chars]) {
+    // 		obj[chars]++
+    // 	}else {
+    // 		obj[chars] = 1
+    // 	}
+    // }
+    // console.log(obj);
+    // var max = 0
+    // var ch = ''
+    // for(key in obj) {
+    // 	if(obj[key] > max){
+    // 		max = obj[key]
+    // 		ch = key
+    // 	}
+    // }
+    // console.log(ch);
 
 
-	// arr.pop()
-	// console.log(arr)
-	// console.log(arr.pop());
-	// arr.sort((a,b) => b - a)
-	// console.log(arr);
-	// arr.push('chen')
-	// console.log(arr);
-	// arr.unshift('a','b')
-	// console.log(arr);
-	// arr.pop()
-	// console.log(arr);
-	// arr.shift()
-	// console.log(arr);
-	// arr.indexOf('23')
-	// console.log(arr.indexOf(23));
-	// var date = new Date()
-	// var date3 = date.valueOf()
-	// var date4 = date.getTime()
-	// var date1 = +new Date()
-	// var date2 = Date.now()
-	// console.log(date1,date2,date3,date4);
 
-	// function getTimes() {
-	// 	var date = new Date()
-	// 	var h = date.getHours()
-	// 	var m = date.getMinutes()
-	// 	var s = date.getSeconds()
-	// 	s = s<10 ? '0' + s : s
-	// 	console.log(h+':'+m+':'+s);	
-	// }
-	// getTimes()
-	// var date = new Date('2020-5-7 22:50:8')
-	// console.log(date);
-	// var date1 = date.getTime()
-	// var date2 = new Date().getTime()
-	// console.log(date1,date2)
-	// let weektime = "0123456".charAt(new Date().getDay()); // 判断今天是星期几
-	// console.log(weektime);
 
-	// function getRandomIntInclusive(min, max) {
-	// 	min = Math.ceil(min);
-	// 	max = Math.floor(max);
-	// 	return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
-	// }
-	// var random = getRandomIntInclusive(1,50)
-	// for(let i=0;i < 5;i++) {
-	// 	var mceil = prompt('输入1-50之间的整数，5次机会 猜对奖金100元')
-	// 	if(mceil > random) {
-	// 		alert('你猜大了！')
-	// 	} else if(mceil < random) {
-	// 		alert('你猜小了！')
-	// 	} else {
-	// 		alert('恭喜你，猜对了！')
-	// 		break;
-	// 	}
-	// }
-	// alert('你的所有次数用尽！')
-	// function Star(name,age) {
-	// 	this.uname = name
-	// 	this.age = age
-	// 	this.say = function(asd) {
-	// 		alert(asd)
-	// 	}
-	// }
-	// var result = new Star('zhang san',200)
-	// result.say('11111111111')
-	// for(key in result) {
-	// 	console.log(key+':'+result[key])
-	// 	// console.log(result[key])
-	// }
-	// var aa = Number()
-	// console.log(aa);  // 输出0
+    // arr.pop()
+    // console.log(arr)
+    // console.log(arr.pop());
+    // arr.sort((a,b) => b - a)
+    // console.log(arr);
+    // arr.push('chen')
+    // console.log(arr);
+    // arr.unshift('a','b')
+    // console.log(arr);
+    // arr.pop()
+    // console.log(arr);
+    // arr.shift()
+    // console.log(arr);
+    // arr.indexOf('23')
+    // console.log(arr.indexOf(23));
+    // var date = new Date()
+    // var date3 = date.valueOf()
+    // var date4 = date.getTime()
+    // var date1 = +new Date()
+    // var date2 = Date.now()
+    // console.log(date1,date2,date3,date4);
 
-	// function params() {
-	// 	var a = b = c = 9
+    // function getTimes() {
+    // 	var date = new Date()
+    // 	var h = date.getHours()
+    // 	var m = date.getMinutes()
+    // 	var s = date.getSeconds()
+    // 	s = s<10 ? '0' + s : s
+    // 	console.log(h+':'+m+':'+s);	
+    // }
+    // getTimes()
+    // var date = new Date('2020-5-7 22:50:8')
+    // console.log(date);
+    // var date1 = date.getTime()
+    // var date2 = new Date().getTime()
+    // console.log(date1,date2)
+    // let weektime = "0123456".charAt(new Date().getDay()); // 判断今天是星期几
+    // console.log(weektime);
 
-	// }
-	// params()
-	// var a;
-	// b = 9
-	// console.log(b)
-	// console.log(a);
+    // function getRandomIntInclusive(min, max) {
+    // 	min = Math.ceil(min);
+    // 	max = Math.floor(max);
+    // 	return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+    // }
+    // var random = getRandomIntInclusive(1,50)
+    // for(let i=0;i < 5;i++) {
+    // 	var mceil = prompt('输入1-50之间的整数，5次机会 猜对奖金100元')
+    // 	if(mceil > random) {
+    // 		alert('你猜大了！')
+    // 	} else if(mceil < random) {
+    // 		alert('你猜小了！')
+    // 	} else {
+    // 		alert('恭喜你，猜对了！')
+    // 		break;
+    // 	}
+    // }
+    // alert('你的所有次数用尽！')
+    // function Star(name,age) {
+    // 	this.uname = name
+    // 	this.age = age
+    // 	this.say = function(asd) {
+    // 		alert(asd)
+    // 	}
+    // }
+    // var result = new Star('zhang san',200)
+    // result.say('11111111111')
+    // for(key in result) {
+    // 	console.log(key+':'+result[key])
+    // 	// console.log(result[key])
+    // }
+    // var aa = Number()
+    // console.log(aa);  // 输出0
 
-	// function isYear(params) {
-	// 	let flag = false
-	// 	if(params % 4 == 0 && params % 100 != 0 || params % 400 == 0) flag = true
-	// 	return flag
-	// }
-	// console.log(isYear(1887))
-	// function getDay(params) {
-	// 	var year = prompt('输入年份')
-	// 	var isyear = isYear(year)
-	// 	if(isyear){
-	// 		alert('是闰年28天')
-	// 	} else {
-	// 		alert('不是闰年29天')
-	// 	}
-	// }
-	// getDay()
-	// function sort(arr) {
-	// 	for (let i = 0; i < arr.length - 1; i++) {
-	// 		for (let j = 0; j < arr.length - i - 1; j++) {
-	// 			if (arr[j] >= arr[j + 1]) {
-	// 				var temp = arr[j]
-	// 				arr[j] = arr[j + 1]
-	// 				arr[j + 1] = temp
-	// 			}
-	// 		}
-	// 	}
-	// 	return arr
-	// }
-	// // let arr1 = sorts()
-	// console.log(sort([21,312,4,234,23,123,12,4,3,5]))
-	// function getzhis (num) {
-	// 	let index = 0
-	// 	for(let i=1;i<=num;i++) {
-	// 		if(num % i == 0) index++
-	// 	}
-	// 	return index == 2 ? num + '是一个质数' : num + '不是质数'
-	// }
-	// console.log(getzhis(4));
-	// function reverses(arr) {
-	// 	var newArr = []
-	// 	for (var i = arr.length - 1; i >= 0; i--) {
-	// 		newArr[newArr.length] = arr[i]
-	// 	}
-	// 	return newArr
-	// }
-	// var arr1 = reverses([1, 2, 3, 4, 5])
-	// console.log(arr1)
-	// function fn() {
-	// 	console.log(arguments)
-	// }
-	// fn(1, 2, 3, 4)
-	// var arr = [32, 43, 5, 66, 7, 3, 2, 3, 4, 6546, 5, 7, 8, 6, 23, 32]
-	// var newarr = []
-	// for (let i = 0; i < arr.length; i++) {
-	// 	if(arr[i] >= 30) {
-	// 		newarr[newarr.length] = arr[i]
-	// 	}
-	// }
-	// console.log(newarr)
-	// for(let i=0; i<arr.length-1;i++) {
-	// 	for(let j=0;j<arr.length - 1 - i;j++) {
-	// 		if(arr[j] >= arr[j+1]) {
-	// 			let temp = arr[j]
-	// 			arr[j] = arr[j+1]
-	// 			arr[j+1] = temp
-	// 		}	
-	// 	}
-	// }
-	// console.log(arr);
+    // function params() {
+    // 	var a = b = c = 9
 
-	// var arr = [1,2,3,4,5,6,7,8,98,12]
-	// var str = ''
-	// var sym = '※'
-	// for(let i=0;i<arr.length;i++) {
-	// 	str += arr[i] + sym
-	// }
-	// console.log(str)
-	// var max = arr[0]
-	// for(let i=0;i<arr.length;i++) {
-	// 	if(max > arr[i]) {
-	// 		max = arr[i]
-	// 	}
-	// }
-	// alert(max)
-	// var type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
-	// var balance = 100
-	// if(type == 1){
-	// 	var deMoney = parseFloat(prompt('输入存钱数'))
-	// 	balance += deMoney
-	// 	alert('余额:' + balance)
-	// 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
-	// }else if(type == 2){
-	// 	var drMoney = parseFloat(prompt('输入取钱数'))
+    // }
+    // params()
+    // var a;
+    // b = 9
+    // console.log(b)
+    // console.log(a);
 
-	// 	balance -= drMoney
-	// 	alert('余额:' + balance)
-	// 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
-	// }else if(type == 3){
-	// 	alert('余额:' + balance)
+    // function isYear(params) {
+    // 	let flag = false
+    // 	if(params % 4 == 0 && params % 100 != 0 || params % 400 == 0) flag = true
+    // 	return flag
+    // }
+    // console.log(isYear(1887))
+    // function getDay(params) {
+    // 	var year = prompt('输入年份')
+    // 	var isyear = isYear(year)
+    // 	if(isyear){
+    // 		alert('是闰年28天')
+    // 	} else {
+    // 		alert('不是闰年29天')
+    // 	}
+    // }
+    // getDay()
+    // function sort(arr) {
+    // 	for (let i = 0; i < arr.length - 1; i++) {
+    // 		for (let j = 0; j < arr.length - i - 1; j++) {
+    // 			if (arr[j] >= arr[j + 1]) {
+    // 				var temp = arr[j]
+    // 				arr[j] = arr[j + 1]
+    // 				arr[j + 1] = temp
+    // 			}
+    // 		}
+    // 	}
+    // 	return arr
+    // }
+    // // let arr1 = sorts()
+    // console.log(sort([21,312,4,234,23,123,12,4,3,5]))
+    // function getzhis (num) {
+    // 	let index = 0
+    // 	for(let i=1;i<=num;i++) {
+    // 		if(num % i == 0) index++
+    // 	}
+    // 	return index == 2 ? num + '是一个质数' : num + '不是质数'
+    // }
+    // console.log(getzhis(4));
+    // function reverses(arr) {
+    // 	var newArr = []
+    // 	for (var i = arr.length - 1; i >= 0; i--) {
+    // 		newArr[newArr.length] = arr[i]
+    // 	}
+    // 	return newArr
+    // }
+    // var arr1 = reverses([1, 2, 3, 4, 5])
+    // console.log(arr1)
+    // function fn() {
+    // 	console.log(arguments)
+    // }
+    // fn(1, 2, 3, 4)
+    // var arr = [32, 43, 5, 66, 7, 3, 2, 3, 4, 6546, 5, 7, 8, 6, 23, 32]
+    // var newarr = []
+    // for (let i = 0; i < arr.length; i++) {
+    // 	if(arr[i] >= 30) {
+    // 		newarr[newarr.length] = arr[i]
+    // 	}
+    // }
+    // console.log(newarr)
+    // for(let i=0; i<arr.length-1;i++) {
+    // 	for(let j=0;j<arr.length - 1 - i;j++) {
+    // 		if(arr[j] >= arr[j+1]) {
+    // 			let temp = arr[j]
+    // 			arr[j] = arr[j+1]
+    // 			arr[j+1] = temp
+    // 		}	
+    // 	}
+    // }
+    // console.log(arr);
 
-	// 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
-	// } else if(type == 4) {
-	// 	alert('正在退出')
-	// } else {
-	// 	alert('无效指令')
-	// 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
-	// }
-	// for(var i=1;i<5;i++) {
-	// 	if(i == 3) continue
-	// 	console.log('di'+ i + 'ge baozi')
-	// }
-	// var index = 0
-	// while (index < 5) {
-	// 	if(index == 2) {
-	// 	index++
-	// 	continue
-	// 	}
-	// 	console.log('di'+ index + 'ge baozi')
-	// 	index++
-	// }
-	// var index = 1
-	// do {
-	// 	if(index == 2) {
-	// 		index++
-	// 		continue
-	// 	}
-	// 	console.log('di'+ index + 'ge baozi')
-	// 	index++
-	// } while (index < 5)
-	// console.log('我正在吃第'+ index + '个包子');
-	// var i = 1
-	// var sum = 0
-	// do {
-	// 	if( i % 6 == 0) {
-	// 		i++
-	// 		continue
-	// 	}
-	// 	sum += i
-	// 	i++
-	// } while (i <= 100)
-	// console.log(sum)
-	// var num = 0
-	// console.log(122 || num++)
-	// console.log(num)   // 返回0   122判断为真 不会执行后面的num++
-	// var num = 0
-	// // var sum = Number
-	// var sum = 0
-	// console.log(sum)
-	// console.log(typeof(sum));
-	// do {
-	// 	// sum = parseInt(sum)
-	// 	// console.log(sum);
-	// 	sum += num
-	// 	num ++
-	// } while (num <= 100)
-	// console.log(sum)
-	// var message = prompt('你爱我吗')
-	// while(message !== '我爱你') {
-	// 	message = prompt('你爱我吗')
-	// }
-	// alert('上当了！')
-	// var index = 0
-	// do {
-	// 	console.log('index')
-	// 	index++
-	// } while(index < 10)
-	// var sum = 0
-	// for (let index = 0; index < 101; index++) {
-	// 	sum += index
-	// 	console.log(index);
-	// }
-	// console.log(sum);
-	// var even = 0
-	// var add = 0
-	// for (let index = 0; index < 101; index++) {
-	// 	if(index % 2 == 0) {
-	// 		even += index
-	// 	} else {
-	// 		add +=index
-	// 	}
+    // var arr = [1,2,3,4,5,6,7,8,98,12]
+    // var str = ''
+    // var sym = '※'
+    // for(let i=0;i<arr.length;i++) {
+    // 	str += arr[i] + sym
+    // }
+    // console.log(str)
+    // var max = arr[0]
+    // for(let i=0;i<arr.length;i++) {
+    // 	if(max > arr[i]) {
+    // 		max = arr[i]
+    // 	}
+    // }
+    // alert(max)
+    // var type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+    // var balance = 100
+    // if(type == 1){
+    // 	var deMoney = parseFloat(prompt('输入存钱数'))
+    // 	balance += deMoney
+    // 	alert('余额:' + balance)
+    // 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+    // }else if(type == 2){
+    // 	var drMoney = parseFloat(prompt('输入取钱数'))
 
-	// }
-	// console.log(even,add)
-	// var socre = 0
-	// var num = prompt('输出总人数')
-	// for (let index = 1; index <= num; index++) {
-	// 	socre += parseFloat(prompt('输入第'+ index + '个的成绩'))
-	// }
-	// console.log('总分数是：'+ socre,'平均分：' + socre/num)
-	// var rows = prompt('输入行数')
-	// var cols = prompt('输入列数')
-	// let str = ''
-	// for(let i = 1; i <= rows; i++) {
-	// 	for(let j = 1; j <= cols; j++) {
-	// 		str += '※'
-	// 	}
-	// 	str += '\n'
-	// }
-	// let str = ''
-	// for(var i=1; i <= 9; i++) {
-	// 	for(var j=1; j <= i; j++) {
-	// 		str += j + '*' + i + "=" + i*j + '\t'
-	// 		//str += '※'
-	// 	}
-	// 	str += '\n'
-	// }
-	// console.log(str)
-	// console.log(str)
-	// var week = prompt('输入0-6')
-	// switch (week) {
-	// 	case '0':
-	// 		alert('今天星期日')
-	// 		break;
-	// 	case '1':
-	// 		alert('今天星期1')
-	// 		break;
-	// 	case '2':
-	// 		alert('今天星期2')
-	// 		break;
-	// 	case '3':
-	// 		alert('今天星期3')
-	// 		break;
-	// 	case '4':
-	// 		alert('今天星期4')
-	// 		break;
-	// 	case '5':
-	// 		alert('今天星期5')
-	// 		break;
-	// 	case '6':
-	// 		alert('今天星期6')
-	// 		break;
-	// 	default:
-	// 		alert('请输入0-6')
-	// 		break;
-	// }
-	// for (var index = 1; index <= 100; index++) {
-	// 	if(index == 1) {
-	// 		console.log('1岁 出生了')
-	// 	}else if(index == 100) {
-	// 		console.log('100岁 死了')
-	// 	}else {
-	// 		console.log(index +'岁')
-	// 	}
+    // 	balance -= drMoney
+    // 	alert('余额:' + balance)
+    // 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+    // }else if(type == 3){
+    // 	alert('余额:' + balance)
 
-	// }
-		// confirm('2222')
-		// prompt("sdaskhdkjsah ")
-		// alert('21111')
-		// console.log('212313123')
-		// var apple1 = '青苹果'
-		// var apple2 = '蓝莓'
-		// console.log(apple1,apple2)
-		// var sinlog = apple1
-		// apple1 = apple2
-		// apple2 = sinlog
-		// console.log(apple1,apple2)
-		// var quest;
-		// var num = 1;
-		// let str = '只能输入\n喜欢\n和\n不喜欢';
-		// function sayFun () {
-		// 	if(num == 1) {
-		// 		quest = prompt("你喜欢我吗")
-		// 		num++;
-		// 		if(quest == '喜欢') {
-		// 			alert('我也喜欢你')
-		// 		} else if(quest == '不喜欢') {
-		// 			alert('我很难受')
-		// 			sayFun()
-		// 		} else {
-		// 			alert(str)
-		// 			sayFun()
-		// 		}
-		// 	} else if(num > 1) {
-		// 		quest = prompt("第" + num + "次问你喜欢我吗")
-		// 		num++
-		// 		if(quest == '喜欢') {
-		// 			alert('第'+ num +'次喜欢上了；')
-		// 		} else if(quest == '不喜欢') {
-		// 			alert('第'+ num +'次不喜欢，痛苦；')
-		// 			sayFun()
-		// 		} else {
-		// 			alert(str)
-		// 			sayFun()
-		// 		}
-		// 	}
-		// }
-		// this.sayFun();
-		// let flag = null;
-		// console.log(typeof flag);
-		// let age = '1201px132'
-		// console.log(parseInt(age))
-		// var [a,b,c] = [10,10,10];
-		// console.log(a,b,c)
-		// ++a
-		// console.log(++a + 2) //14
-		// b++
-		// console.log(b++ + 2) //13
-		// console.log(c++ + ++c) //22
-		// var num = 0 
-		// console.log(NaN || num++) // 0
-		// console.log(num)   // 1
-		// if (quest == '喜欢') {
-		// 	alert('我也喜欢你')
-		// } else if (quest == '不喜欢') {
-		// 	alert('我很难受')
-		// } else {
-		// 	alert(str)
-		// 	num++;
-		// 	if (quest == '不喜欢') {
-		// 		alert('第'+ num +'次不喜欢')
-		// 	} else if(quest == '喜欢') {
-		// 		alert('喜欢我第'+ num + '次')
-		// 	} else {
-		// 		quest = prompt('第' + num + '次问你喜欢我吗？')
-		// 	}
+    // 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+    // } else if(type == 4) {
+    // 	alert('正在退出')
+    // } else {
+    // 	alert('无效指令')
+    // 	// type = prompt('请输入你要的操作\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+    // }
+    // for(var i=1;i<5;i++) {
+    // 	if(i == 3) continue
+    // 	console.log('di'+ i + 'ge baozi')
+    // }
+    // var index = 0
+    // while (index < 5) {
+    // 	if(index == 2) {
+    // 	index++
+    // 	continue
+    // 	}
+    // 	console.log('di'+ index + 'ge baozi')
+    // 	index++
+    // }
+    // var index = 1
+    // do {
+    // 	if(index == 2) {
+    // 		index++
+    // 		continue
+    // 	}
+    // 	console.log('di'+ index + 'ge baozi')
+    // 	index++
+    // } while (index < 5)
+    // console.log('我正在吃第'+ index + '个包子');
+    // var i = 1
+    // var sum = 0
+    // do {
+    // 	if( i % 6 == 0) {
+    // 		i++
+    // 		continue
+    // 	}
+    // 	sum += i
+    // 	i++
+    // } while (i <= 100)
+    // console.log(sum)
+    // var num = 0
+    // console.log(122 || num++)
+    // console.log(num)   // 返回0   122判断为真 不会执行后面的num++
+    // var num = 0
+    // // var sum = Number
+    // var sum = 0
+    // console.log(sum)
+    // console.log(typeof(sum));
+    // do {
+    // 	// sum = parseInt(sum)
+    // 	// console.log(sum);
+    // 	sum += num
+    // 	num ++
+    // } while (num <= 100)
+    // console.log(sum)
+    // var message = prompt('你爱我吗')
+    // while(message !== '我爱你') {
+    // 	message = prompt('你爱我吗')
+    // }
+    // alert('上当了！')
+    // var index = 0
+    // do {
+    // 	console.log('index')
+    // 	index++
+    // } while(index < 10)
+    // var sum = 0
+    // for (let index = 0; index < 101; index++) {
+    // 	sum += index
+    // 	console.log(index);
+    // }
+    // console.log(sum);
+    // var even = 0
+    // var add = 0
+    // for (let index = 0; index < 101; index++) {
+    // 	if(index % 2 == 0) {
+    // 		even += index
+    // 	} else {
+    // 		add +=index
+    // 	}
 
-		// }
+    // }
+    // console.log(even,add)
+    // var socre = 0
+    // var num = prompt('输出总人数')
+    // for (let index = 1; index <= num; index++) {
+    // 	socre += parseFloat(prompt('输入第'+ index + '个的成绩'))
+    // }
+    // console.log('总分数是：'+ socre,'平均分：' + socre/num)
+    // var rows = prompt('输入行数')
+    // var cols = prompt('输入列数')
+    // let str = ''
+    // for(let i = 1; i <= rows; i++) {
+    // 	for(let j = 1; j <= cols; j++) {
+    // 		str += '※'
+    // 	}
+    // 	str += '\n'
+    // }
+    // let str = ''
+    // for(var i=1; i <= 9; i++) {
+    // 	for(var j=1; j <= i; j++) {
+    // 		str += j + '*' + i + "=" + i*j + '\t'
+    // 		//str += '※'
+    // 	}
+    // 	str += '\n'
+    // }
+    // console.log(str)
+    // console.log(str)
+    // var week = prompt('输入0-6')
+    // switch (week) {
+    // 	case '0':
+    // 		alert('今天星期日')
+    // 		break;
+    // 	case '1':
+    // 		alert('今天星期1')
+    // 		break;
+    // 	case '2':
+    // 		alert('今天星期2')
+    // 		break;
+    // 	case '3':
+    // 		alert('今天星期3')
+    // 		break;
+    // 	case '4':
+    // 		alert('今天星期4')
+    // 		break;
+    // 	case '5':
+    // 		alert('今天星期5')
+    // 		break;
+    // 	case '6':
+    // 		alert('今天星期6')
+    // 		break;
+    // 	default:
+    // 		alert('请输入0-6')
+    // 		break;
+    // }
+    // for (var index = 1; index <= 100; index++) {
+    // 	if(index == 1) {
+    // 		console.log('1岁 出生了')
+    // 	}else if(index == 100) {
+    // 		console.log('100岁 死了')
+    // 	}else {
+    // 		console.log(index +'岁')
+    // 	}
+
+    // }
+    // confirm('2222')
+    // prompt("sdaskhdkjsah ")
+    // alert('21111')
+    // console.log('212313123')
+    // var apple1 = '青苹果'
+    // var apple2 = '蓝莓'
+    // console.log(apple1,apple2)
+    // var sinlog = apple1
+    // apple1 = apple2
+    // apple2 = sinlog
+    // console.log(apple1,apple2)
+    // var quest;
+    // var num = 1;
+    // let str = '只能输入\n喜欢\n和\n不喜欢';
+    // function sayFun () {
+    // 	if(num == 1) {
+    // 		quest = prompt("你喜欢我吗")
+    // 		num++;
+    // 		if(quest == '喜欢') {
+    // 			alert('我也喜欢你')
+    // 		} else if(quest == '不喜欢') {
+    // 			alert('我很难受')
+    // 			sayFun()
+    // 		} else {
+    // 			alert(str)
+    // 			sayFun()
+    // 		}
+    // 	} else if(num > 1) {
+    // 		quest = prompt("第" + num + "次问你喜欢我吗")
+    // 		num++
+    // 		if(quest == '喜欢') {
+    // 			alert('第'+ num +'次喜欢上了；')
+    // 		} else if(quest == '不喜欢') {
+    // 			alert('第'+ num +'次不喜欢，痛苦；')
+    // 			sayFun()
+    // 		} else {
+    // 			alert(str)
+    // 			sayFun()
+    // 		}
+    // 	}
+    // }
+    // this.sayFun();
+    // let flag = null;
+    // console.log(typeof flag);
+    // let age = '1201px132'
+    // console.log(parseInt(age))
+    // var [a,b,c] = [10,10,10];
+    // console.log(a,b,c)
+    // ++a
+    // console.log(++a + 2) //14
+    // b++
+    // console.log(b++ + 2) //13
+    // console.log(c++ + ++c) //22
+    // var num = 0 
+    // console.log(NaN || num++) // 0
+    // console.log(num)   // 1
+    // if (quest == '喜欢') {
+    // 	alert('我也喜欢你')
+    // } else if (quest == '不喜欢') {
+    // 	alert('我很难受')
+    // } else {
+    // 	alert(str)
+    // 	num++;
+    // 	if (quest == '不喜欢') {
+    // 		alert('第'+ num +'次不喜欢')
+    // 	} else if(quest == '喜欢') {
+    // 		alert('喜欢我第'+ num + '次')
+    // 	} else {
+    // 		quest = prompt('第' + num + '次问你喜欢我吗？')
+    // 	}
+
+    // }
 </script>
 
 </html>

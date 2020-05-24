@@ -11,9 +11,30 @@
 
 </body>
 <script>
-    let {name,age,sex} = {name:'1221',age: 18,sex:'nan'}
-    console.log(name,age,sex);
-    
+    // let {name,age,sex} = {name:'1221',age: 18,sex:'nan'}
+    // console.log(name,age,sex);
+    // class FFF {
+    //     constructor
+    // }
+    function Mun(x, y) {
+        this.x = x
+        this.y = y
+    }
+    Mun.prototype.add = function(x, y) {
+        return parseInt(this.x) + parseInt(this.y)
+    }
+    var p = new Mun(2, 5)
+    console.log(p.add());
+    console.log(Mun.prototype.constructor === Mun);
+    console.log(p.__proto__ === Mun.prototype);
+    console.log(p.__proto__.__proto__.constructor);
+    // // console.log(Fun.prototype.__proto__.constructor.prototype.__proto__);
+    // // console.log(Fun.prototype.prototype.__proto__.constructor);
+    // // console.log(Fun.prototype.prototype.__proto__.prototype.__proto__);
+    // console.log(Fun.prototype.__proto__);
+
+
+
     // class Star {
     //     constructor(uname,age) {
     //         this.uname = uname
@@ -121,8 +142,6 @@
     //     return nums
     // }
     // console.log(tu(9), a)
-
-
 </script>
 
 </html>

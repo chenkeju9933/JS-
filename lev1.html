@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var bo = document.querySelector('div')
+            // var div = document.createElement('button')
+        let obj = {}
+        for (let i = 0; i < 50; i++) {
+
+            var div = document.createElement('button')
+            obj.index = i
+            div.innerText = `${obj.index}`
+            console.log(obj.index);
+
+            bo.appendChild(div)
+        }
+        bo.addEventListener('click', function(e) {
+            console.log(e.target.innerText)
+        })
+    </script>
+</body>
+
+</html>
