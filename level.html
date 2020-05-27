@@ -11,27 +11,50 @@
 
 </body>
 <script>
-    // let {name,age,sex} = {name:'1221',age: 18,sex:'nan'}
-    // console.log(name,age,sex);
-    // class FFF {
-    //     constructor
+    // var ul = document.createElement('ul')
+    // for (let i = 0; i < 4; i++) {
+    //     var li = document.createElement('li')
+    //     li.innerText = '我是' + i
+    //     li.setAttribute('data-index', i)
+    //     ul.appendChild(li)
     // }
-    function Mun(x, y) {
-        this.x = x
-        this.y = y
+    // document.body.appendChild(ul)
+    // var lis = document.querySelector('ul')
+    // lis.addEventListener('click', function(e) {
+    //     console.log(e.target.innerText)
+    //     console.log(e.target.getAttribute('data-index'))
+    // })
+    var num = 0
+
+    function fn() {
+        console.log('我要打印6句话');
+        ++num
+        if (num >= 6) return;
+
+        fn()
     }
-    Mun.prototype.add = function(x, y) {
-        return parseInt(this.x) + parseInt(this.y)
-    }
-    var p = new Mun(2, 5)
-    console.log(p.add());
-    console.log(Mun.prototype.constructor === Mun);
-    console.log(p.__proto__ === Mun.prototype);
-    console.log(p.__proto__.__proto__.constructor);
-    // // console.log(Fun.prototype.__proto__.constructor.prototype.__proto__);
-    // // console.log(Fun.prototype.prototype.__proto__.constructor);
-    // // console.log(Fun.prototype.prototype.__proto__.prototype.__proto__);
-    // console.log(Fun.prototype.__proto__);
+    fn()
+        // let {name,age,sex} = {name:'1221',age: 18,sex:'nan'}
+        // console.log(name,age,sex);
+        // class FFF {
+        //     constructor
+        // }
+        // function Mun(x, y) {
+        //     this.x = x
+        //     this.y = y
+        // }
+        // Mun.prototype.add = function(x, y) {
+        //     return parseInt(this.x) + parseInt(this.y)
+        // }
+        // var p = new Mun(2, 5)
+        // console.log(p.add());
+        // console.log(Mun.prototype.constructor === Mun);
+        // console.log(p.__proto__ === Mun.prototype);
+        // console.log(p.__proto__.__proto__.constructor);
+        // // console.log(Fun.prototype.__proto__.constructor.prototype.__proto__);
+        // // console.log(Fun.prototype.prototype.__proto__.constructor);
+        // // console.log(Fun.prototype.prototype.__proto__.prototype.__proto__);
+        // console.log(Fun.prototype.__proto__);
 
 
 

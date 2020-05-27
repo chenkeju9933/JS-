@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var scope = 'global scope'
+        // scope = 'global';
+        // delete scope
+        // console.log(scope);
+
+    function chenckscope() {
+        var scope = 'local'
+            // console.log(j);
+            // if (true) {
+            //     var j = 0
+            // }
+
+        function nested() {
+
+            // var scope = 'nested'
+            return scope
+        }
+        // return nested()
+        return nested()
+
+    }
+    // chenckscope()()
+    console.log(chenckscope())
+    var a = [function(x) {
+        return x * x
+    }, 20]
+    a[0](a[1])
+</script>
+
+</html>
